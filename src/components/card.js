@@ -5,7 +5,9 @@ const Card = ({ title, issue, description, gitHubLink }) => {
     <div className="card">
       <h2 className="card-title">{title}</h2>
       <h3 className="card-subtitle">{issue}</h3>
-      <p className="card-description">{description}</p>
+      <div style={{ paddingLeft: 50, paddingRight: 50 }}>
+        <p className="card-description">{description}</p>
+      </div>
       <p className="card-description">
         <a className="card-link" href={gitHubLink} target="_blank">
           View on Github

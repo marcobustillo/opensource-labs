@@ -662,6 +662,9 @@ pre tt:after {
   margin-top: 20px;
   color: #3c486a;
   font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-link {
@@ -675,5 +678,6 @@ pre tt:after {
 }
 
 .line {
+  margin-bottom: 20px;
   border-bottom: 3px solid #656565;
 }

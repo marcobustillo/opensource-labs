@@ -21,7 +21,7 @@ const Main = props => {
 
   const createEllipsis = data => {
     if (data.length > 32) {
-      return `${data.substring(0, 50)}...`
+      return `${data.substring(0, 32)}...`
     }
     return data
   }
@@ -38,10 +38,10 @@ const Main = props => {
         {issueList.map(issue => {
           const title = issue.repository_url.split("/")
           return (
-            <Col key={issue.id} xs={12} sm={12} lg={4}>
+            <Col key={issue.id} xs={12} sm={12} md={4} lg={4} xl={4}>
               <Card
                 title={createEllipsis(title[title.length - 1])}
-                description={createEllipsis(issue.title)}
+                description={issue.title}
                 issue={`Issue #${issue.number}`}
                 gitHubLink={issue.html_url}
               />

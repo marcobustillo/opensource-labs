@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "opensource-labs",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Curator of open source issues",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Marco Bustillo <marcobustillo21@gmail.com>",
   "dependencies": {
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.34",
@@ -16,15 +16,19 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-grid-system": "^6.0.7",
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "opensource-labs",
+    "opensource",
+    "open-source-curator"
   ],
-  "license": "MIT",
+  "license": "Proprietary",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -36,9 +40,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/marcobustillo/opensource-labs.git"
   }
 }

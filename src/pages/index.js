@@ -1,20 +1,24 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Row, Col } from "react-grid-system"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
+import Header from "../components/header"
+import Main from "../components/main"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+    <Header siteTitle="Open Source Labs" />
+    <div
+      style={{
+        margin: `0 auto`,
+        maxWidth: 1280,
+      }}
+    >
+      <div className="line" />
+      <Main />
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
 

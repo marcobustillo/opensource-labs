@@ -19,22 +19,29 @@ const Main = props => {
       })
   }
 
+  const createEllipsis = data => {
+    if (data.length > 32) {
+      return `${data.substring(0, 50)}...`
+    }
+    return data
+  }
+
   useEffect(() => {
     fetchIssues()
   }, [])
 
-  if (loading) return <div>Loading..</div>
+  if (loading) return <div style={{ minHeight: "70vh" }}>Loading..</div>
 
   return (
-    <>
+    <div style={{ minHeight: "70vh" }}>
       <Row>
         {issueList.map(issue => {
           const title = issue.repository_url.split("/")
           return (
             <Col key={issue.id} xs={12} sm={12} lg={4}>
               <Card
-                title={title[title.length - 1]}
-                description={issue.title}
+                title={createEllipsis(title[title.length - 1])}
+                description={createEllipsis(issue.title)}
                 issue={`Issue #${issue.number}`}
                 gitHubLink={issue.html_url}
               />
@@ -42,7 +49,7 @@ const Main = props => {
           )
         })}
       </Row>
-    </>
+    </div>
   )
 }
 

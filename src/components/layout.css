@@ -623,6 +623,8 @@ pre tt:after {
 }
 
 .footer-style {
+  margin-top: 20px;
+  border-top: 3px solid #656565;
   color: white;
   text-align: center;
 }
@@ -673,7 +675,5 @@ pre tt:after {
 }
 
 .line {
-  border-bottom-style: solid;
-  border-bottom-width: 3px;
-  border-bottom-color: #656565;
+  border-bottom: 3px solid #656565;
 }

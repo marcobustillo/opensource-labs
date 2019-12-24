@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react"
 import { Row, Col } from "react-grid-system"
 import Card from "./card"
+import Skeleton from "./skeleton"
 import { store } from "../context/FilterContext"
 
 const URL = "https://api.github.com/search/issues"
@@ -37,7 +38,7 @@ const Main = props => {
     fetchIssues(page, lang, label)
   }, [page, lang, label])
 
-  if (loading) return <div style={{ minHeight: "70vh" }}>Loading...</div>
+  if (loading) return <Skeleton />
 
   return (
     <div style={{ minHeight: "70vh" }}>

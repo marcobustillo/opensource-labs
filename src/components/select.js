@@ -2,11 +2,15 @@ import React from "react"
 import { TiArrowSortedDown } from "react-icons/ti"
 
 const Select = props => {
-  const { id, open, setOpen, data, label, selected, action } = props
+  const { id, open, setOpen, data, label, selected, action, disabled } = props
 
   return (
     <div style={{ position: "relative" }}>
-      <div className="selection-label" onClick={() => setOpen(!open)}>
+      <div
+        disabled={disabled}
+        className="selection-label"
+        onClick={() => setOpen(!open)}
+      >
         <div>{label}</div>
         <div className="selection-icon">
           <TiArrowSortedDown size="1.5em" />

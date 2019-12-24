@@ -644,6 +644,22 @@ pre tt:after {
   min-height: 200px;
 }
 
+.skeleton-card {
+  background: #eef0f6;
+  width: 100%;
+  border-width: 4px;
+  text-align: center;
+  padding: 10px;
+  border-color: #179aaf;
+  border-radius: 10px;
+  border-style: solid;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 200px;
+  max-height: 200px;
+  min-height: 200px;
+}
+
 .card-title {
   font-weight: 700;
   font-size: 1rem;

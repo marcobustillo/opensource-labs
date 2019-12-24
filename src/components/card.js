@@ -9,7 +9,12 @@ const Card = ({ title, issue, description, gitHubLink }) => {
         <p className="card-description">{description}</p>
       </div>
       <p className="card-description">
-        <a className="card-link" href={gitHubLink} target="_blank">
+        <a
+          className="card-link"
+          href={gitHubLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           View on Github
         </a>
       </p>

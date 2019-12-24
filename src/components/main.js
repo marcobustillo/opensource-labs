@@ -38,8 +38,7 @@ const Main = props => {
     fetchIssues(page, lang, label)
   }, [page, lang, label])
 
-  const test = true
-  if (test) return <Skeleton />
+  if (loading) return <Skeleton />
 
   return (
     <div style={{ minHeight: "70vh" }}>

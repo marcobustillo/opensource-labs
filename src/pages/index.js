@@ -4,6 +4,7 @@ import { Row, Col } from "react-grid-system"
 import Layout from "../components/layout"
 import Header from "../components/header"
 import Main from "../components/main"
+import Filters from "../components/filters"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
@@ -17,6 +18,7 @@ const IndexPage = () => (
       }}
     >
       <div className="line" />
+      <Filters />
       <Main />
     </div>
   </Layout>

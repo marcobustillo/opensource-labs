@@ -681,3 +681,56 @@ pre tt:after {
   margin-bottom: 20px;
   border-bottom: 3px solid #656565;
 }
+
+.selection-container {
+  z-index: 9999;
+  width: 100%;
+  position: absolute;
+  border: 3px #179aaf solid;
+  border-radius: 10px;
+  overflow-y: scroll;
+  max-height: 200px;
+  background-color: black;
+}
+
+.selection-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 3px #179aaf solid;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  color: #eef0f6;
+  padding: 15px;
+  font-size: 1em;
+  letter-spacing: 0.2em;
+}
+
+.selection-label:hover {
+  cursor: pointer;
+  border-color: #2a344c;
+}
+
+.selection-item {
+  color: #eef0f6;
+  padding: 15px;
+  font-size: 1em;
+  letter-spacing: 0.2em;
+}
+
+.selected {
+  background-color: #179aaf;
+}
+
+.selection-item:hover {
+  cursor: pointer;
+  background-color: #179aaf;
+}
+
+.selection-icon {
+  color: #eef0f6;
+}
+
+.selection-icon:hover {
+  color: #179aaf;
+}

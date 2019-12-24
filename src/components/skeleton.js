@@ -11,7 +11,37 @@ const Skeleton = props => {
           return (
             <Col key={placeholder} xs={12} sm={12} md={4} lg={4} xl={4}>
               <div className="skeleton-card">
-                <img src={"../bb-lab.png"} alt="Logo" />
+                <div
+                  style={{
+                    width: "50%",
+                    backgroundColor: "#d4d4d4",
+                    height: "1rem",
+                  }}
+                />
+                <div
+                  style={{
+                    width: "30%",
+                    backgroundColor: "#d4d4d4",
+                    height: "1rem",
+                    marginTop: 20,
+                  }}
+                />
+                <div
+                  style={{
+                    width: "60%",
+                    backgroundColor: "#d4d4d4",
+                    height: "1rem",
+                    marginTop: 20,
+                  }}
+                />
+                <div
+                  style={{
+                    width: "40%",
+                    backgroundColor: "#d4d4d4",
+                    height: "1rem",
+                    marginTop: 20,
+                  }}
+                />
               </div>
             </Col>
           )

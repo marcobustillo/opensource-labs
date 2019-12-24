@@ -734,3 +734,26 @@ pre tt:after {
 .selection-icon:hover {
   color: #179aaf;
 }
+
+.icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  background-color: transparent;
+  border-color: transparent;
+  color: #eef0f6;
+}
+
+.icon-button:disabled {
+  color: #656565;
+}
+
+.icon-button:focus {
+  outline: none;
+}
+
+.icon-button:hover:enabled {
+  cursor: pointer;
+  color: #179aaf;
+}

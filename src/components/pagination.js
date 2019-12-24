@@ -1,5 +1,6 @@
 import React from "react"
 import { Row, Col, useScreenClass } from "react-grid-system"
+import { TiMediaPlay, TiMediaRewind, TiMediaPlayReverse } from "react-icons/ti"
 
 import Button from "./button"
 
@@ -16,8 +17,12 @@ const Pagination = props => {
               textAlign: ["xs", "sm"].includes(screenClass) ? "center" : "end",
             }}
           >
-            <Button disabled={page < 2} onClick={previous}>
-              Previous
+            <Button
+              className="icon-button"
+              disabled={page < 2}
+              onClick={previous}
+            >
+              <TiMediaPlayReverse size={50} />
             </Button>
           </div>
         </Col>
@@ -29,7 +34,9 @@ const Pagination = props => {
                 : "start",
             }}
           >
-            <Button onClick={next}>Next</Button>
+            <Button className="icon-button" onClick={next}>
+              <TiMediaPlay size={50} />
+            </Button>
           </div>
         </Col>
       </Row>

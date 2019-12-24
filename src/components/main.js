@@ -1,23 +1,28 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useContext } from "react"
 import { Row, Col } from "react-grid-system"
 import Card from "./card"
-import Pagination from "./pagination"
+import { store } from "../context/FilterContext"
 
 const URL = "https://api.github.com/search/issues"
 
 const Main = props => {
-  const [loading, setLoading] = useState(false)
+  const {
+    state: { page, loading, lang, label },
+    dispatch,
+  } = useContext(store)
   const [issueList, setIssueList] = useState([])
-  const [page, setPage] = useState(1)
 
-  const fetchIssues = page => {
-    setLoading(true)
-    const urlBuilder = `${URL}?q=language:javascript+label:%22help+wanted%22+type:issue+state:open&page=${page}&per_page=9`
+  const fetchIssues = (page, lang, label) => {
+    const urlBuilder = `${URL}?q=language:${lang.value}+label:%22${label.value}%22+type:issue+state:open&page=${page}&per_page=9`
     fetch(urlBuilder)
       .then(response => response.json())
       .then(data => {
         setIssueList(data.items)
-        setLoading(false)
+        dispatch({ type: "request_success" })
+      })
+      .catch(err => {
+        alert(err)
+        dispatch({ type: "request_failed" })
       })
   }
 
@@ -28,17 +33,9 @@ const Main = props => {
     return data
   }
 
-  const nextPage = () => {
-    setPage(page + 1)
-  }
-
-  const previousPage = () => {
-    setPage(page - 1)
-  }
-
   useEffect(() => {
-    fetchIssues(page)
-  }, [page])
+    fetchIssues(page, lang, label)
+  }, [page, lang, label])
 
   if (loading) return <div style={{ minHeight: "70vh" }}>Loading...</div>
 
@@ -59,7 +56,6 @@ const Main = props => {
           )
         })}
       </Row>
-      <Pagination page={page} next={nextPage} previous={previousPage} />
     </div>
   )
 }

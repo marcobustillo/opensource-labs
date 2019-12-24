@@ -2,8 +2,7 @@ import React from "react"
 import { TiArrowSortedDown } from "react-icons/ti"
 
 const Select = props => {
-  const { data, label, selected, action } = props
-  const [open, setOpen] = React.useState(false)
+  const { id, open, setOpen, data, label, selected, action } = props
 
   return (
     <div style={{ position: "relative" }}>
@@ -23,7 +22,10 @@ const Select = props => {
               }`}
               value={item.value}
               onClick={event => {
-                action(item)
+                action({
+                  type: id,
+                  payload: item,
+                })
                 setOpen(false)
               }}
             >

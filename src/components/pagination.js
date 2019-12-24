@@ -1,12 +1,26 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Row, Col, useScreenClass } from "react-grid-system"
+import { store } from "../context/FilterContext"
 import { TiMediaPlay, TiMediaRewind, TiMediaPlayReverse } from "react-icons/ti"
 
 import Button from "./button"
 
 const Pagination = props => {
-  const { page, next, previous } = props
   const screenClass = useScreenClass()
+  const globalState = useContext(store)
+
+  const {
+    dispatch,
+    state: { page, loading },
+  } = globalState
+
+  const next = () => {
+    dispatch({ type: "next" })
+  }
+
+  const previous = () => {
+    dispatch({ type: "previous" })
+  }
 
   return (
     <div style={{ marginTop: 10, marginBottom: 10 }}>
@@ -19,7 +33,7 @@ const Pagination = props => {
           >
             <Button
               className="icon-button"
-              disabled={page < 2}
+              disabled={page < 2 || loading}
               onClick={previous}
             >
               <TiMediaPlayReverse size={50} />
@@ -34,7 +48,7 @@ const Pagination = props => {
                 : "start",
             }}
           >
-            <Button className="icon-button" onClick={next}>
+            <Button disabled={loading} className="icon-button" onClick={next}>
               <TiMediaPlay size={50} />
             </Button>
           </div>

@@ -16,7 +16,7 @@ const Filters = props => {
 
   return (
     <Row>
-      <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+      <Col xs={12} sm={12} md={12} lg={6} xl={6}>
         <Select
           id="lang_selector"
           disabled={loading}
@@ -33,7 +33,7 @@ const Filters = props => {
           action={dispatch}
         />
       </Col>
-      <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+      <Col xs={12} sm={12} md={12} lg={6} xl={6}>
         <Select
           id="label_selector"
           disabled={loading}
